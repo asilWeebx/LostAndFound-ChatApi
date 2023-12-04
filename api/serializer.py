@@ -1,4 +1,4 @@
-from api.models import User, Todo, ChatMessage, Profile
+from api.models import User, ChatMessage, Profile
 from django.contrib.auth.password_validation import validate_password
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
@@ -55,13 +55,6 @@ class RegisterSerializer(serializers.ModelSerializer):
 
         return user
     
-
-class TodoSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Todo
-        fields = ['id', 'user', 'title', 'completed']
-
 
     
 class ProfileSerializer(serializers.ModelSerializer):
